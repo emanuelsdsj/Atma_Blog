@@ -25,7 +25,7 @@ SECRET_KEY = 'h%0g62mn2d-zgwpqn$-v$-&1dok=8ou1y9_&vv01xtbe6lg^83'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['atmablogapp.herokuapp.com']
 
 
 # Application definition
@@ -119,6 +119,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+
+# Heroku
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 
