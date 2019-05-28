@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'h%0g62mn2d-zgwpqn$-v$-&1dok=8ou1y9_&vv01xtbe6lg^83'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['atmablogapp.herokuapp.com']
+ALLOWED_HOSTS = ['atmablogapp.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
