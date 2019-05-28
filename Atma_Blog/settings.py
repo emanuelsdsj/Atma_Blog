@@ -15,15 +15,15 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'h%0g62mn2d-zgwpqn$-v$-&1dok=8ou1y9_&vv01xtbe6lg^83'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+#'h%0g62mn2d-zgwpqn$-v$-&1dok=8ou1y9_&vv01xtbe6lg^83'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DEBUG_VALUE')
 
 ALLOWED_HOSTS = ['atmablogapp.herokuapp.com', '127.0.0.1']
 
