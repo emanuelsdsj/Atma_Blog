@@ -24,7 +24,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 #'h%0g62mn2d-zgwpqn$-v$-&1dok=8ou1y9_&vv01xtbe6lg^83'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG_VALUE')
+DEBUG = (os.environ.get('DEBUG_VALUE') == "True")
 
 ALLOWED_HOSTS = ['atmablogapp.herokuapp.com', '127.0.0.1']
 
@@ -32,6 +32,9 @@ ALLOWED_HOSTS = ['atmablogapp.herokuapp.com', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework.authtoken',
+    'api.apps.ApiConfig',
+    'rest_framework',
     'crispy_forms',
     'users.apps.UsersConfig',
     'blog.apps.BlogConfig',
@@ -144,3 +147,13 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 
 django_heroku.settings(locals())
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
